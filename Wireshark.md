@@ -14,7 +14,6 @@ git push -u origin main
 
 在本地仓库中，执行以下命令从远程仓库拉取最新的代码并合并到当前分支：
 
-
 git pull origin main
 
 * `origin` 是远程仓库的名称（默认是 `origin`）。
@@ -53,10 +52,12 @@ git reset --hard origin/main
 
 养成定期同步的习惯，尤其是在团队协作中：
 
-5. **定期同步**
+# **5. 定期同步**
 
 * 每次开始工作前，先执行 `git pull` 拉取最新代码。
-* 完成修改后，提交并推送：git add .
+* 完成修改后，提交并推送：
+* `git pull`
+* git add .
   git commit -m "提交信息"
   git push origin main
 
