@@ -1,5 +1,66 @@
-# Wireshark抓包新手使用教程
+git init
 
+git add README.md
+
+git commit -m "first commit"
+
+git branch -M main
+
+git remote add origin [https://github.com/lin20021212/Money.git](https://github.com/lin20021212/SmartCamara.git)
+
+git push -u origin main
+
+### 1. **从远程仓库拉取最新代码**
+
+在本地仓库中，执行以下命令从远程仓库拉取最新的代码并合并到当前分支：
+
+
+git pull origin main
+
+* `origin` 是远程仓库的名称（默认是 `origin`）。
+* `main` 是你要同步的分支名称。
+
+`git pull` 会自动从远程仓库获取代码并尝试与本地分支合并。如果存在冲突，需要手动解决。
+
+### 2. **查看本地与远程的差异**
+
+如果你只想查看本地与远程仓库的差异，可以使用以下命令：
+
+git diff origin/main
+
+这会显示本地分支与远程分支之间的差异。
+
+### 3. **解决冲突**
+
+如果 `git pull` 时出现冲突（例如本地修改与远程修改冲突），需要手动解决：
+
+1. 打开冲突的文件，找到冲突标记（`<<<<<<<` 和 `>>>>>>>`）。
+2. 选择保留的代码，删除冲突标记。
+3. 解决冲突后，添加修改的文件：git add <文件名>
+4. 提交修改：git commit -m "解决冲突并合并代码"
+
+### 4. **强制同步（覆盖本地修改）**
+
+如果你希望放弃本地修改，直接从远程仓库同步最新代码，可以使用以下命令：
+
+git fetch origin
+git reset --hard origin/main
+
+* `git fetch` 会从远程仓库获取最新的代码，但不会自动合并。
+* `git reset --hard` 会将本地分支强制重置为远程分支的状态，放弃所有本地修改。
+
+**注意：** 使用 `git reset --hard` 会丢失未提交的本地修改，请确保所有重要修改已经提交。
+
+养成定期同步的习惯，尤其是在团队协作中：
+
+5. **定期同步**
+
+* 每次开始工作前，先执行 `git pull` 拉取最新代码。
+* 完成修改后，提交并推送：git add .
+  git commit -m "提交信息"
+  git push origin main
+
+Wireshark抓包新手使用教程
 
 Wireshark是非常流行的网络封包分析软件，可以截取各种网络数据包，并显示数据包详细信息。常用于开发测试过程各种问题定位。本文主要内容包括：
 
@@ -34,7 +95,6 @@ https://www.wireshark.org/download.html
 
 win10pcap兼容性安装包
 
-
 Wireshark 开始抓包示例
 先介绍一个使用wireshark工具抓取ping命令操作的示例，让读者可以先上手操作感受一下抓包的具体过程。
 
@@ -56,12 +116,6 @@ Wireshark 开始抓包示例
 
 ![1754839688370](image/Wireshark/1754839688370.png)
 **6、wireshark抓包完成，就这么简单。关于wireshark显示过滤条件、抓包过滤条件、以及如何查看数据包中的详细内容在后面介绍。**
-
-
-
-
-
-
 
 ————————————————
 
